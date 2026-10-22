@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Barile di Pizza · Pizza napolitana a la leña en Villa Devoto</title>
+<meta name="description" content="Pizzería napolitana de familia en Nueva York 4296, Villa Devoto. Horno a leña, mesas en la vereda, pedidos por WhatsApp y reservas para festejar.">
+<meta name="theme-color" content="#361C14">
+<meta property="og:title" content="Barile di Pizza · Villa Devoto">
+<meta property="og:description" content="¡Ya probaste muchas! Ahora comé la más deliciosa. Pizza napolitana a la leña en Devoto.">
+<meta property="og:image" content="img/hero-fachada.webp">
+<link rel="icon" href="img/favicon.png">
+<script>
+  // La intro se decide antes de pintar: sin JS o con movimiento reducido no hay intro.
+  (function () {
+    var d = document.documentElement; d.classList.add('js');
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      d.classList.add('con-intro');
+      setTimeout(function () { d.classList.remove('con-intro'); d.classList.add('listo'); }, 6500); // seguro anti-trabas
+    }
+  })();
+</script>
+<style>html.con-intro, html.con-intro body { background: #C9A47E; }</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Marcellus&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero-fachada.webp">
+<link rel="stylesheet" href="kit/kit.css?v=1">
+<link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+
+<!-- ============ INTRO: la caja que se abre ============ -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro__mitad intro__mitad--arriba">
+    <img class="intro__logo" src="img/logo-cafe.png" alt="" width="939" height="365">
+  </div>
+  <div class="intro__mitad intro__mitad--abajo">
+    <div class="intro__renglon">Pizza: <span class="intro__escrito">Barile</span></div>
+  </div>
+</div>
+
+<!-- ============ BARRA ============ -->
+<header class="barra" id="barra">
+  <a class="barra__logo" href="#inicio" aria-label="Barile di Pizza, inicio"><img src="img/logo-crema.png" alt="" width="939" height="365"></a>
+  <nav class="barra__nav" id="menu" aria-label="Secciones">
+    <a href="#carta">La carta</a>
+    <a href="#horno">El horno</a>
+    <a href="#familia">Los de Barile</a>
+    <a href="#festeja">Festejá acá</a>
+    <a href="#vereda">Cómo llegar</a>
+    <button type="button" class="barra__nav-reservar" data-menu-reservar>Reservar mesa</button>
+  </nav>
+  <span class="barra__horno" id="estadoHorno" hidden></span>
+  <div class="barra__acciones">
+    <button type="button" class="btn btn--claro btn--chico barra__reservar" data-kit-open="reservas">Reservar</button>
+    <a class="btn btn--rojo btn--chico" href="#carta">Pedir</a>
+    <button type="button" class="barra__burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO: la vereda y la pizarra ============ -->
+<section class="hero" id="inicio" aria-labelledby="hero-t">
+  <div class="hero__foto"><img src="img/hero-fachada.webp" alt="La fachada de Barile di Pizza de noche, con sombrillas y mesas en la vereda" width="1440" height="1446" fetchpriority="high" decoding="async"></div>
+  <div class="hero__velo"></div>
+  <div class="hero__inner">
+    <div class="hero__texto">
+      <p class="hero__kicker sube" style="--d:1">Nueva York 4296 · Villa Devoto</p>
+      <h1 class="hero__t" id="hero-t">
+        <span class="renglon"><span style="--d:2">Del horno a leña</span></span>
+        <span class="renglon"><span style="--d:3">a tu mesa,</span></span>
+        <span class="renglon"><span style="--d:4">en la vereda.</span></span>
+      </h1>
+      <p class="hero__bajada sube" style="--d:5">Pizza napolitana hecha por una familia que eligió Devoto. Vení a la casona, sentate bajo las sombrillas o llevate tu caja.</p>
+      <div class="hero__ctas sube" style="--d:6">
+        <button type="button" class="btn btn--rojo" data-kit-open="reservas">Reservá tu mesa</button>
+        <a class="btn btn--claro" href="#carta">Ver la carta</a>
+      </div>
+      <ul class="hero__chips sube" style="--d:7" aria-label="Lo que dicen">
+        <li>★ 4,8 en Google · 626 reseñas</li>
+        <li>Horno a leña</li>
+        <li>Mesas afuera</li>
+      </ul>
+    </div>
+    <div class="hero__pizarra-wrap">
+      <div class="pizarra pizarra--hero" id="pizarraHero" role="img" aria-label="Pizarra: ¡Ya probaste muchas! Ahora comé la más deliciosa">
+        <div class="pizarra__marco">
+          <p class="tiza tiza--1">¡Ya probaste muchas!</p>
+          <p class="tiza tiza--2">Ahora comé</p>
+          <p class="tiza tiza--3">la más deliciosa</p>
+          <p class="tiza tiza--4">Hoy en el horno: Cipolla rossa e rokefort</p>
+        </div>
+      </div>
+      <figure class="polaroid polaroid--hero">
+        <img src="img/fam-familia.webp" alt="Ingrid, Leandro y sus hijos con remeras de Barile" width="900" height="900" loading="lazy" decoding="async">
+        <figcaption>los de Barile</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EL HORNO ============ -->
+<section class="horno bloque bloque--oscuro" id="horno" aria-labelledby="horno-t">
+  <div class="horno__grid">
+    <div class="horno__texto">
+      <p class="kicker entra">El horno</p>
+      <h2 class="titulo entra" id="horno-t">Acá pasa todo.</h2>
+      <p class="parrafo entra">La masa se estira a mano, el pomodoro va justo y el horno de cúpula a leña hace el resto: borde inflado, manchitas de fuego y el centro tierno de la napolitana.</p>
+      <p class="parrafo entra">Lo ves desde la barra. Cada pizza sale de ahí, de a una.</p>
+      <div class="dial entra" aria-hidden="true">
+        <svg viewBox="0 0 200 200" class="dial__svg">
+          <circle cx="100" cy="100" r="92" class="dial__aro"/>
+          <circle cx="100" cy="100" r="80" class="dial__cara"/>
+          <g class="dial__marcas"></g>
+          <g class="dial__aguja" id="aguja"><path d="M100 100 L100 34" /><circle cx="100" cy="100" r="7"/></g>
+        </svg>
+        <p class="dial__leyenda">El reloj del horno sube mientras bajás.</p>
+      </div>
+    </div>
+    <div class="horno__fotos">
+      <figure class="horno__foto horno__foto--fuego entra-foto"><img src="img/horno-fuego.webp" alt="El fuego de leña dentro del horno de cúpula" width="763" height="763" loading="lazy" decoding="async"></figure>
+      <figure class="horno__foto horno__foto--pizza" id="hornoPizza"><img src="img/p-barile.webp" alt="Pizza Barile recién salida del horno" width="1000" height="1000" loading="lazy" decoding="async"></figure>
+      <figure class="horno__foto horno__foto--chica entra-foto"><img src="img/barra-horno.webp" alt="La barra con el horno rojo al fondo" width="1000" height="1000" loading="lazy" decoding="async"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LA CARTA ============ -->
+<section class="carta bloque" id="carta" aria-labelledby="carta-t">
+  <div class="carta__cab">
+    <div>
+      <p class="kicker entra">La carta</p>
+      <h2 class="titulo entra" id="carta-t">¿Qué sale del horno hoy?</h2>
+    </div>
+    <p class="parrafo entra">Elegí una sección. Todo lo de la carta se puede pedir para llevar: lo sumás a tu caja y nos llega por WhatsApp.</p>
+  </div>
+  <div class="carta__grid">
+    <div class="carta__lista" data-kit="carta"></div>
+    <aside class="carta__aside" aria-hidden="true">
+      <figure class="carta__foto" id="cartaFoto">
+        <img src="img/p-barile.webp" alt="" width="1000" height="1000" decoding="async">
+        <figcaption id="cartaFotoTxt">Pizza Barile</figcaption>
+      </figure>
+      <p class="carta__nota">El puntito rojo marca los platos con foto.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ TU CAJA (WOW) ============ -->
+<section class="caja bloque bloque--kraft" id="caja" aria-labelledby="caja-t">
+  <div class="caja__grid">
+    <div class="caja__texto">
+      <p class="kicker entra">Pedí directo</p>
+      <h2 class="titulo entra" id="caja-t">Armá tu caja.</h2>
+      <ol class="pasos entra">
+        <li><span><b>Elegí</b> en la carta y tocá "A la caja".</span></li>
+        <li><span><b>Te la anotamos</b> como en el local: a mano, en el renglón de la caja.</span></li>
+        <li><span><b>Cerrá la caja</b> y nos llega por WhatsApp. Pasás a retirarla por Nueva York 4296.</span></li>
+      </ol>
+      <div class="caja__ctas entra">
+        <button type="button" class="btn btn--rojo" data-kit-open="carrito">Cerrar la caja</button>
+        <a class="btn btn--linea" href="#carta">Ver la carta</a>
+      </div>
+      <p class="caja__app entra">¿Preferís delivery? También estamos en <a href="https://www.pedidosya.com.ar/restaurantes/buenos-aires/barile-di-pizza-573309b1-41ae-40ec-960e-3a5ca6b43654-menu" target="_blank" rel="noopener">PedidosYa</a>.</p>
+    </div>
+    <div class="caja__pila-wrap">
+      <div class="caja__pila" id="pila" aria-live="polite"></div>
+      <div class="caja__rapidos" id="rapidos">
+        <span>Para arrancar:</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOS DE BARILE ============ -->
+<section class="familia bloque" id="familia" aria-labelledby="familia-t">
+  <div class="familia__grid">
+    <div class="familia__fotos">
+      <figure class="polaroid polaroid--grande entra-polaroid" style="--r:-3deg">
+        <img src="img/fam-familia.webp" alt="Ingrid y Leandro con sus hijos, todos con la remera de Barile" width="900" height="900" loading="lazy" decoding="async">
+        <figcaption>los cuatro</figcaption>
+      </figure>
+      <figure class="polaroid polaroid--mediana entra-polaroid" style="--r:4deg">
+        <img src="img/fam-pareja.webp" alt="Ingrid y Leandro abrazados" width="900" height="900" loading="lazy" decoding="async">
+        <figcaption>24 años eligiéndonos</figcaption>
+      </figure>
+    </div>
+    <div class="familia__texto">
+      <p class="kicker entra">Los de Barile</p>
+      <h2 class="titulo entra" id="familia-t">Somos Ingrid y Leandro.</h2>
+      <p class="parrafo entra">Llegamos a la Argentina con una valija llena de sueños y muchos años de pizza encima. En diciembre de 2023 abrimos Barile en una casona de Devoto, después de noches enteras sin dormir para que todo estuviera listo.</p>
+      <p class="parrafo entra">Leandro está frente al horno. Ingrid, en todo lo demás: las cuentas, las ideas y resolver lo que haga falta. Nuestros hijos vienen a ayudar cada vez que pueden. Y los postres los hacemos nosotros: nada tercerizado.</p>
+      <blockquote class="frase entra">“No vendemos solo comida: construimos momentos.”</blockquote>
+      <p class="firma entra">Pasión | Conexión</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MOMENTOS BARILE (WOW álbum) ============ -->
+<section class="momentos bloque bloque--papel" id="momentos" aria-labelledby="momentos-t">
+  <div class="momentos__grid">
+    <div class="momentos__texto">
+      <p class="kicker entra">Momentos Barile</p>
+      <h2 class="titulo entra" id="momentos-t">El álbum de la casa.</h2>
+      <p class="parrafo entra">Los vecinos, los amigos, los colegas pizzeros que pasan por el horno y los cumpleaños en la vereda. Arrastrá las fotos para pasarlas.</p>
+      <div class="momentos__ctrl entra">
+        <button type="button" class="btn-redondo" id="albumAnt" aria-label="Foto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <span class="momentos__n" id="albumN">1 / 11</span>
+        <button type="button" class="btn-redondo" id="albumSig" aria-label="Foto siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+    <div class="album" id="album" aria-roledescription="álbum de fotos">
+      <figure class="foto-album"><img src="img/fam-apertura.webp" alt="Ingrid y Leandro en la vereda el día de la apertura" width="900" height="900" loading="lazy" decoding="async"><figcaption>el mes de la apertura</figcaption></figure>
+      <figure class="foto-album"><img src="img/fam-llaves.webp" alt="Ingrid y Leandro mostrando las llaves del local" width="900" height="900" loading="lazy" decoding="async"><figcaption>el día de las llaves</figcaption></figure>
+      <figure class="foto-album"><img src="img/fam-firma.webp" alt="Ingrid y Leandro firmando el contrato" width="900" height="900" loading="lazy" decoding="async"><figcaption>firmando el sueño</figcaption></figure>
+      <figure class="foto-album"><img src="img/fam-chicos.webp" alt="Ingrid con los chicos frente a Barile" width="900" height="1200" loading="lazy" decoding="async"><figcaption>los chicos en la puerta</figcaption></figure>
+      <figure class="foto-album"><img src="img/fam-leandro.webp" alt="Leandro en la barra con el horno detrás" width="900" height="900" loading="lazy" decoding="async"><figcaption>Leandro y su horno</figcaption></figure>
+      <figure class="foto-album"><img src="img/fam-mesa.webp" alt="Ingrid y Leandro comiendo en una mesa del local" width="892" height="892" loading="lazy" decoding="async"><figcaption>domingo en Barile</figcaption></figure>
+      <figure class="foto-album"><img src="img/fam-cumple.webp" alt="Un grupo de amigas festejando bajo las sombrillas" width="900" height="900" loading="lazy" decoding="async"><figcaption>cumple en la vereda</figcaption></figure>
+      <figure class="foto-album"><img src="img/fam-vereda.webp" alt="Una pareja comiendo pizza en la mesa de afuera" width="900" height="900" loading="lazy" decoding="async"><figcaption>mesa para dos</figcaption></figure>
+      <figure class="foto-album"><img src="img/fam-pizarra.webp" alt="La vereda llena y la pizarra de Barile" width="900" height="944" loading="lazy" decoding="async"><figcaption>la vereda llena</figcaption></figure>
+      <figure class="foto-album foto-album--tuya">
+        <div class="foto-album__vacia"><span>Tu foto acá</span></div>
+        <figcaption><button type="button" class="link-tiza" data-kit-open="reservas">festejá con nosotros →</button></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FESTEJÁ ACÁ (reservas) ============ -->
+<section class="festeja bloque" id="festeja" aria-labelledby="festeja-t">
+  <div class="festeja__grid">
+    <div class="festeja__texto">
+      <p class="kicker entra">Reservas</p>
+      <h2 class="titulo entra" id="festeja-t">Festejá en Barile.</h2>
+      <p class="parrafo entra">Cumpleaños, aniversarios o un viernes cualquiera. Elegí el día y la hora, y te confirmamos por WhatsApp.</p>
+      <ul class="lista-tiza entra">
+        <li><span>Mesas adentro, en la casona, o afuera bajo las sombrillas.</span></li>
+        <li><span>¿Es un cumple? Contanos en el comentario y lo preparamos.</span></li>
+        <li><span>Para grupos grandes, escribinos al <a href="https://wa.me/5491130109696" target="_blank" rel="noopener">11 3010-9696</a>.</span></li>
+      </ul>
+      <figure class="polaroid polaroid--festeja entra-polaroid" style="--r:-2.5deg">
+        <img src="img/fam-cumple.webp" alt="Amigas festejando un cumpleaños en la vereda" width="900" height="900" loading="lazy" decoding="async">
+        <figcaption>¡que los cumplas!</figcaption>
+      </figure>
+    </div>
+    <div class="festeja__form entra">
+      <h3 class="festeja__form-t">Reservá tu mesa</h3>
+      <div data-kit="reservas"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LA VEREDA ============ -->
+<section class="vereda bloque bloque--oscuro" id="vereda" aria-labelledby="vereda-t">
+  <div class="vereda__grid">
+    <figure class="vereda__foto entra-foto"><img src="img/vereda-pizarra.webp" alt="La vereda de Barile con la pizarra y las mesas bajo los árboles" width="1100" height="1100" loading="lazy" decoding="async"></figure>
+    <div class="vereda__texto">
+      <p class="kicker entra">La vereda</p>
+      <h2 class="titulo entra" id="vereda-t">Nos encontrás en Nueva York 4296.</h2>
+      <p class="parrafo entra">Villa Devoto, CABA. Buscá la pizarra en la puerta y las sombrillas negras.</p>
+      <dl class="datos entra">
+        <div><dt>Horario</dt><dd>Martes a domingo desde las 19 h. Sábados y domingos, también al mediodía. <span class="ph">[horario a confirmar]</span></dd></div>
+        <div><dt>WhatsApp</dt><dd><a href="https://wa.me/5491130109696" target="_blank" rel="noopener">11 3010-9696</a></dd></div>
+        <div><dt>Instagram</dt><dd><a href="https://instagram.com/bariledipizza" target="_blank" rel="noopener">@bariledipizza</a></dd></div>
+      </dl>
+      <div class="vereda__ctas entra">
+        <a class="btn btn--rojo" href="https://www.google.com/maps/search/?api=1&amp;query=Barile+di+Pizza+Nueva+York+4296+CABA" target="_blank" rel="noopener">Cómo llegar</a>
+        <button type="button" class="btn btn--claro" data-kit-open="reservas">Reservar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <div class="pie__grid">
+    <img class="pie__logo" src="img/logo-crema.png" alt="Barile di Pizza" width="939" height="365" loading="lazy">
+    <p class="pie__frase">¡Ya probaste muchas! Ahora comé la más deliciosa.</p>
+    <nav class="pie__links" aria-label="Contacto">
+      <a href="https://wa.me/5491130109696" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://instagram.com/bariledipizza" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Barile+di+Pizza+Nueva+York+4296+CABA" target="_blank" rel="noopener">Nueva York 4296, Villa Devoto</a>
+    </nav>
+  </div>
+  <p class="pie__credito">Sitio desarrollado por <a href="https://alejomfernandez.com.ar" target="_blank" rel="noopener">Alejo Martín Fernández</a></p>
+</footer>
+
+<script src="js/main.js?v=2" defer></script>
+<script type="module">
+  import { initKit } from './kit/kit.js?v=1';
+  window.BARILE_KIT = initKit({
+    config: 'cliente.json',
+    carta: {
+      itemClass: 'it',
+      template: (p, ctx) => {
+        const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+        const precio = ctx.money(p.precio);
+        return `
+          <div class="it__cuerpo">
+            <h3 class="it__nombre">${esc(p.nombre)}${(p.etiquetas || []).map(ctx.etiquetaHTML).join('')}${p.foto ? '<span class="it__punto" aria-hidden="true"></span>' : ''}</h3>
+            ${p.descripcion ? `<p class="it__desc">${esc(p.descripcion)}</p>` : ''}
+            ${p.foto ? `<button type="button" class="it__ver" data-ver="${esc(ctx.asset(p.foto))}" data-nombre="${esc(p.nombre)}">Ver foto</button>` : ''}
+          </div>
+          <div class="it__lado">
+            <span class="it__precio">${precio ? precio : '<span class="it__consultar">Consultar</span>'}</span>
+            ${p.disponible === false ? '<span class="it__off">Hoy no hay</span>' : (precio ? `<div data-kit-qty="${esc(p.id)}"></div>` : '')}
+          </div>`;
+      },
+      etiquetas: { casa: { label: 'De la casa' }, veggie: { label: 'Vegana o veggie' } },
+    },
+    carrito: { label: 'Tu caja', icono: '<svg viewBox="0 0 24 24"><path d="M3 9h18v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9Z"/><path d="M3 9l2-4h14l2 4"/><path d="M8 14h8"/></svg>' },
+  });
+</script>
+</body>
+</html>

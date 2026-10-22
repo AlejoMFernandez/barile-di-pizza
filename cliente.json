@@ -1,0 +1,368 @@
+{
+  "$schema": "https://raw.githubusercontent.com/AlejoMFernandez/kit-demos/main/docs/cliente.schema.json",
+  "id": "barile-di-pizza",
+  "nombre": "Barile di Pizza",
+  "pais": "AR",
+  "idioma": "es",
+  "modo": "demo",
+  "whatsapp": "5491130109696",
+  "prefijoPedido": "BP",
+  "supabase": {
+    "url": "",
+    "anonKey": ""
+  },
+  "marca": {
+    "logo": "img/logo-cafe.png",
+    "logoPanel": "img/logo-crema.png",
+    "favicon": "img/favicon.png",
+    "colores": {
+      "fondo": "#F6EFE3",
+      "superficie": "#FFFFFF",
+      "texto": "#361C14",
+      "primario": "#B8262A",
+      "acento": "#C9A47E",
+      "borde": "#E0D2BD"
+    },
+    "fuentes": {
+      "titulos": "'Marcellus', Georgia, serif",
+      "texto": "'Work Sans', system-ui, sans-serif",
+      "googleFonts": ""
+    },
+    "estilo": {
+      "forma": "redondeada",
+      "sombra": "suave",
+      "borde": "1.5px",
+      "mayusculas": false
+    }
+  },
+  "modulos": {
+    "carta": true,
+    "carrito": true,
+    "reservas": true,
+    "admin": true
+  },
+  "horarios": {
+    "lun": [],
+    "mar": [
+      [
+        "19:00",
+        "23:30"
+      ]
+    ],
+    "mie": [
+      [
+        "19:00",
+        "23:30"
+      ]
+    ],
+    "jue": [
+      [
+        "19:00",
+        "23:30"
+      ]
+    ],
+    "vie": [
+      [
+        "19:00",
+        "00:00"
+      ]
+    ],
+    "sab": [
+      [
+        "12:00",
+        "15:00"
+      ],
+      [
+        "19:00",
+        "00:00"
+      ]
+    ],
+    "dom": [
+      [
+        "12:00",
+        "15:00"
+      ],
+      [
+        "19:00",
+        "23:30"
+      ]
+    ]
+  },
+  "reservas": {
+    "intervaloMin": 30,
+    "duracionMin": 90,
+    "capacidad": 36,
+    "maxPersonas": 12,
+    "anticipacionMin": 60,
+    "diasAdelante": 21,
+    "ultimoTurnoMin": 60,
+    "cerrados": []
+  },
+  "pedidos": {
+    "salidas": [
+      "whatsapp",
+      "mercadopago"
+    ],
+    "tipos": [
+      "retiro"
+    ],
+    "envio": 0,
+    "minimo": 0
+  },
+  "pagos": {
+    "mercadopago": {
+      "endpoint": "https://kit-demos-amf.vercel.app/api/mp-preference",
+      "modo": "sandbox"
+    }
+  },
+  "carta": {
+    "categorias": [
+      {
+        "id": "clasicas",
+        "nombre": "Las clásicas"
+      },
+      {
+        "id": "casa",
+        "nombre": "De la casa"
+      },
+      {
+        "id": "entradas",
+        "nombre": "Para empezar"
+      },
+      {
+        "id": "dulce",
+        "nombre": "Postre y copas"
+      },
+      {
+        "id": "pizarra",
+        "nombre": "La pizarra (no es carta)"
+      }
+    ],
+    "productos": [
+      {
+        "id": "muzzarella",
+        "categoria": "clasicas",
+        "nombre": "Muzzarella",
+        "descripcion": "Masa, pomodoro y muzzarella. La prueba de fuego de cualquier pizzería.",
+        "precio": 16500,
+        "foto": "img/p-margherita2.webp",
+        "etiquetas": []
+      },
+      {
+        "id": "margherita",
+        "categoria": "clasicas",
+        "nombre": "Margherita",
+        "descripcion": "Pomodoro, muzzarella y albahaca fresca.",
+        "precio": 18000,
+        "foto": "img/p-margherita.webp",
+        "etiquetas": []
+      },
+      {
+        "id": "napolitana",
+        "categoria": "clasicas",
+        "nombre": "Napolitana",
+        "descripcion": "Con rodajas de tomate y albahaca.",
+        "precio": 18500,
+        "foto": "img/p-napolitana.webp",
+        "etiquetas": []
+      },
+      {
+        "id": "fugazza",
+        "categoria": "clasicas",
+        "nombre": "Fugazza",
+        "descripcion": "Cebolla y muzzarella, bien de acá.",
+        "precio": 17500,
+        "foto": "img/p-fugazza.webp",
+        "etiquetas": []
+      },
+      {
+        "id": "barile",
+        "categoria": "casa",
+        "nombre": "Pizza Barile",
+        "descripcion": "Muzzarella, burrata fresca y tomates cherry.",
+        "precio": 24000,
+        "foto": "img/p-barile.webp",
+        "etiquetas": [
+          "casa"
+        ]
+      },
+      {
+        "id": "cherry-pesto",
+        "categoria": "casa",
+        "nombre": "Cherry al pesto",
+        "descripcion": "Pesto de albahaca y tomates cherry.",
+        "precio": 21000,
+        "foto": "img/p-cherry-pesto.webp",
+        "etiquetas": []
+      },
+      {
+        "id": "cipolla-rokefort",
+        "categoria": "casa",
+        "nombre": "Cipolla rossa e rokefort",
+        "descripcion": "Cebolla morada, roquefort y muzzarella, con nueces y miel.",
+        "precio": 22500,
+        "foto": "",
+        "etiquetas": []
+      },
+      {
+        "id": "sopressata",
+        "categoria": "casa",
+        "nombre": "Sopressata",
+        "descripcion": "Con salame sopressata, una de las favoritas.",
+        "precio": 22000,
+        "foto": "img/p-sopressata.webp",
+        "etiquetas": []
+      },
+      {
+        "id": "stracciatella",
+        "categoria": "casa",
+        "nombre": "Stracciatella",
+        "descripcion": "Pomodoro, stracciatella cremosa y albahaca.",
+        "precio": 23500,
+        "foto": "img/p-stracciatella.webp",
+        "etiquetas": []
+      },
+      {
+        "id": "portobella",
+        "categoria": "casa",
+        "nombre": "Portobella vegana",
+        "descripcion": "Hongos portobello. La opción vegana de la casa.",
+        "precio": 21000,
+        "foto": "img/p-portobella.webp",
+        "etiquetas": [
+          "veggie"
+        ]
+      },
+      {
+        "id": "calzone",
+        "categoria": "casa",
+        "nombre": "Calzone",
+        "descripcion": "Doblado y relleno, salido del horno a leña.",
+        "precio": 22000,
+        "foto": "img/p-calzone.webp",
+        "etiquetas": []
+      },
+      {
+        "id": "burrata",
+        "categoria": "entradas",
+        "nombre": "Burrata",
+        "descripcion": "Burrata fresca con tomates cherry, pesto y albahaca.",
+        "precio": 17000,
+        "foto": "img/p-burrata.webp",
+        "etiquetas": []
+      },
+      {
+        "id": "burratina-crudo",
+        "categoria": "entradas",
+        "nombre": "Burratina e crudo",
+        "descripcion": "Burratina con jamón crudo y hojas verdes.",
+        "precio": 19500,
+        "foto": "img/p-burratina-crudo.webp",
+        "etiquetas": []
+      },
+      {
+        "id": "caprese",
+        "categoria": "entradas",
+        "nombre": "Caprese",
+        "descripcion": "Tomate, muzzarella y albahaca.",
+        "precio": 13500,
+        "foto": "img/p-caprese.webp",
+        "etiquetas": [
+          "veggie"
+        ]
+      },
+      {
+        "id": "tiramisu",
+        "categoria": "dulce",
+        "nombre": "Tiramisú",
+        "descripcion": "Lo hacemos nosotros, como todos los postres.",
+        "precio": 8500,
+        "foto": "",
+        "etiquetas": [
+          "casa"
+        ]
+      },
+      {
+        "id": "vermu",
+        "categoria": "dulce",
+        "nombre": "Vermú Cinzano",
+        "descripcion": "Cinzano para arrancar, como en Italia.",
+        "precio": 7500,
+        "foto": "",
+        "etiquetas": []
+      },
+      {
+        "id": "aperol",
+        "categoria": "dulce",
+        "nombre": "Aperol Spritz",
+        "descripcion": "El de la mesa de la vereda.",
+        "precio": 9500,
+        "foto": "img/horno-aperol.webp",
+        "etiquetas": []
+      },
+      {
+        "id": "vino",
+        "categoria": "dulce",
+        "nombre": "Copa de vino de la cava",
+        "descripcion": "Tinto, blanco o rosado. Preguntanos qué hay abierto.",
+        "precio": 7000,
+        "foto": "",
+        "etiquetas": []
+      },
+      {
+        "id": "pizarra-1",
+        "categoria": "pizarra",
+        "nombre": "¡Ya probaste muchas!",
+        "descripcion": "",
+        "precio": null,
+        "foto": "",
+        "etiquetas": []
+      },
+      {
+        "id": "pizarra-2",
+        "categoria": "pizarra",
+        "nombre": "Ahora comé",
+        "descripcion": "",
+        "precio": null,
+        "foto": "",
+        "etiquetas": []
+      },
+      {
+        "id": "pizarra-3",
+        "categoria": "pizarra",
+        "nombre": "la más deliciosa",
+        "descripcion": "",
+        "precio": null,
+        "foto": "",
+        "etiquetas": []
+      },
+      {
+        "id": "pizarra-4",
+        "categoria": "pizarra",
+        "nombre": "Hoy en el horno: Cipolla rossa e rokefort",
+        "descripcion": "",
+        "precio": null,
+        "foto": "",
+        "etiquetas": []
+      }
+    ]
+  },
+  "textos": {
+    "agregar": "A la caja",
+    "agregado": "En la caja",
+    "tuPedido": "Tu caja",
+    "verPedido": "Ver tu caja",
+    "carritoVacio": "Tu caja está vacía.",
+    "carritoVacioSub": "Elegí una pizza de la carta y la anotamos acá.",
+    "enviarPedido": "Cerrar la caja",
+    "porWhatsappSub": "Te escribimos y coordinás el pago con nosotros",
+    "pedidoListo": "¡Caja cerrada!",
+    "pedidoListoSub": "Tu código es {codigo}. Lo vemos al instante y te escribimos por WhatsApp.",
+    "seguir": "Seguir mirando",
+    "retiro": "Retiro en Nueva York 4296",
+    "comentario": "¿Festejan algo? (cumple, aniversario, silla para bebé…)",
+    "confirmarReserva": "Guardame la mesa",
+    "waPedido": "¡Hola Barile! Quiero armar esta caja:",
+    "waReserva": "¡Hola Barile! Pedí una mesa para {personas} el {dia} a las {hora}. A nombre de {nombre}."
+  }
+}
